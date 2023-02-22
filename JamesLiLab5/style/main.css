@@ -1,0 +1,191 @@
+/*imports normalize*/
+@import "normalize.css";
+
+.grid{
+    display: grid;
+    background-color: #5f2909;
+    padding: 10px;
+}
+
+/*media queries/breakpoints*/
+@media screen and (min-width: 800px) {
+    /*grid 2 col*/
+    .grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto;
+      column-gap: 9px;
+      height: calc(100vh - 20px);
+    }
+    h2{
+        margin-top: 42vh;
+        font-size: 20pt;
+    }
+    h2:hover{
+        margin-top: 40vh;
+    }
+    .hovertext {
+        margin-top: 42vh;
+        display:block;
+    }
+    img{
+        margin-top: 7vh;
+        opacity: .5;
+    }
+    img:hover{
+        margin-top: -35vh;
+    }
+    .poem{
+        margin-top: 37vh;
+    }
+    .poem:hover{
+        margin-top: 33vh;
+    }
+    
+  }
+@media screen and (max-width: 800px) {
+    /*grid 1 col*/
+    .grid {
+      display: grid;
+      grid-template-columns: auto;
+      row-gap: 9px;
+    }
+    h2 {
+      font-size: 30pt;
+    }
+    .hovertext {
+        /*hides the text below the specified screen size*/
+        margin-top: auto;
+        display:none;
+    }
+    img{
+        opacity: .8;
+    }
+    img:hover{
+        margin: 4vh;
+    }
+    .poem{
+        margin: 3vh;
+        padding: 2vh;
+    }
+    .poem:hover{
+        margin: 3vh;
+        padding: 12vh;
+    }
+  }
+
+/*header properties and animation*/
+ h2 {
+    text-align: center;
+    font-family: Garamond, sans-serif;
+    font-weight: bold;
+     /*easing for no hover*/
+    transition: 2s ease-in-out;
+  }
+    h2:hover{
+        transition: 2s ease-in-out;
+        transform: scale(1.1);
+        font-size: 300%;
+        text-transform: uppercase;
+        animation: color-change 2s infinite ease-in-out;
+    }
+    /*infinitely changes text color until no longer hovering*/
+    @keyframes color-change {
+        0% { color: rgb(109, 57, 38); }
+        50% { color: rgba(141, 178, 40); }
+        100% { color: rgb(109, 57, 38); }
+    }
+
+/*grid item format*/
+  .grid-item {
+      background-color: rgba(251, 233, 212, 0.858);
+      border: 10px dashed rgba(141, 178, 40, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      font: 15pt Garamond, sans-serif;
+      text-align: center;
+     justify-content: center;
+     overflow: hidden;
+  }
+
+/*text that displays to tell the user to hover over the image. properties and animation for the text.*/
+.hovertext {
+     /*easing for no hover*/
+    transition: 1s ease-in-out;
+}
+  .hovertext:hover{
+    transition: 1s ease-in-out;
+    display: block;
+    transform: scale(1.1);
+    font-size: 120%;
+    text-transform: lowercase;
+    color: green;
+    font-weight: bold;
+  }
+
+/*image properties and animation*/
+img{
+    width:90%;
+    display:inline-block;
+    justify-content: center;
+    object-fit: contain;
+    border-radius: 10px;
+     /*easing for no hover*/
+    transition: 2s ease-in-out;
+}
+  img:hover{
+    object-fit: contain;
+    transition: 2s ease-in-out;
+    width: 80%;
+    opacity: 1;
+    border-radius: 50px;
+    border: 6px double rgb(109, 57, 38);
+  }
+
+/*poem properties and animation*/
+.poem{
+    font: Garamond, sans-serif;
+    font-size: 100%;
+     /*easing for no hover*/
+    transition: 1s ease-in-out;
+}
+  .poem:hover{
+    transition: 1s ease-in-out;
+    transform: scale(1.1);
+    font-size: 150%;
+    text-transform: lowercase;
+  }
+
+/*text inside poem and animation properties*/ 
+    .green{
+        color:black;
+         /*easing for no hover*/
+        transition: .5s ease-in-out;
+    }
+    .green:hover{
+        transition: .5s ease-in-out;
+        color: green;
+        font-weight: bold;
+    }
+
+    .stone{
+        color:black;
+         /*easing for no hover*/
+        transition: .5s ease-in-out;
+    }
+    .stone:hover{
+        transition: .5s ease-in-out;
+        color: rgb(116, 116, 116);
+        font-weight: bold;
+    }
+
+    #sus{
+        color:black;
+         /*easing for no hover*/
+        transition: .5s ease-in-out;
+    }
+    #sus:hover{
+        transition: .5s ease-in-out;
+        color: rgb(199, 30, 30);
+        font-weight: bold;
+    }
